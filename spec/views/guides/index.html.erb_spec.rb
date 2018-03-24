@@ -4,10 +4,12 @@ RSpec.describe "guides/index", type: :view do
   before(:each) do
     assign(:guides, [
       Guide.create!(
-        :title => "Title"
+        :title => "Title",
+        :content => "MyText"
       ),
       Guide.create!(
-        :title => "Title"
+        :title => "Title",
+        :content => "MyText"
       )
     ])
   end
@@ -15,5 +17,6 @@ RSpec.describe "guides/index", type: :view do
   it "renders a list of guides" do
     render
     assert_select "tr>td", :text => "Title".to_s, :count => 2
+    assert_select "tr>td", :text => "MyText".to_s, :count => 2
   end
 end

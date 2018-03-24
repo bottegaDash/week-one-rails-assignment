@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "guides/edit", type: :view do
   before(:each) do
     @guide = assign(:guide, Guide.create!(
-      :title => "MyString"
+      :title => "MyString",
+      :content => "MyText"
     ))
   end
 
@@ -13,6 +14,8 @@ RSpec.describe "guides/edit", type: :view do
     assert_select "form[action=?][method=?]", guide_path(@guide), "post" do
 
       assert_select "input#guide_title[name=?]", "guide[title]"
+
+      assert_select "textarea#guide_content[name=?]", "guide[content]"
     end
   end
 end
