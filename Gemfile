@@ -54,3 +54,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rspec-rails', '~> 3.5'
 gem 'capybara', '~> 2.13'
+gem 'rails-controller-testing'
