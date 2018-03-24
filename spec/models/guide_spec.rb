@@ -1,8 +1,5 @@
 require 'rails_helper'
 
-describe Guide do
-  it 'can be created' do
-    g = Guide.create(title: 'Some Title', content: 'Some content')
-    expect(g).to be_valid
-  end
+RSpec.describe Guide, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
